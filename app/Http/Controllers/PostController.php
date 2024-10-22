@@ -29,7 +29,14 @@ class PostController extends Controller
     public function store(Request $request)
     {
         \Log::debug($request);
-        return "to be implemented";
+
+        $data = [
+            'author' => $request->author,
+            'title' => $request->title,
+            'content' => $request->content,
+
+        ];
+        Post::create($data);
         // mājās izveidot jaunu Post ierakstu datubāzē
     }
 }
